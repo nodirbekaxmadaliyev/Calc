@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calc.MainPage"
+         Background="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray900}}"
+         Title="Standard Calculator">
+    <Grid RowDefinitions=".3*,.7*"
+      Padding="10,7">
+        <HorizontalStackLayout HeightRequest="100"
+                           BackgroundColor="{StaticResource Gray900}">
+            <Label TextColor="{StaticResource Secondary}" 
+               x:Name="lb"
+               FontSize="40"
+               VerticalTextAlignment="Center"
+               Padding="20, 0"
+               BackgroundColor="{StaticResource Gray900}"
+               Text="0"/>
+        </HorizontalStackLayout>
+        <Grid Grid.Row="1" 
+          RowDefinitions="*,*,*,*,*" 
+          ColumnDefinitions="*,*,*,*"
+          ColumnSpacing="2"
+          RowSpacing="2">
+            <BoxView />
+            <!--#region Row 1 -->
+            <Button Clicked="N"         Grid.Column="0" Grid.Row="0" Text="%" FontSize="40"/>
+            <Button Clicked="cls"       Grid.Column="1" Grid.Row="0" Text="C" FontSize="40"/>
+            <Button Clicked="backspace" Grid.Column="2" Grid.Row="0" Text="⌫" FontSize="40"/>
+            <Button Clicked="divide"    Grid.Column="3" Grid.Row="0" Text="/" FontSize="40"/>
+            <!--#endregion-->
+
+            <!--#region Row 2 -->
+            <Button Clicked="N7" Grid.Column="0" Grid.Row="1" Text="7" FontSize="40"/>
+            <Button Clicked="N8" Grid.Column="1" Grid.Row="1" Text="8" FontSize="40"/>
+            <Button Clicked="N9" Grid.Column="2" Grid.Row="1" Text="9" FontSize="40"/>
+            <Button Clicked="multiple" Grid.Column="3" Grid.Row="1" Text="x" FontSize="40"/>
+            <!--#endregion-->
+
+            <!--#region Row 3 -->
+            <Button Clicked="N4" Grid.Column="0" Grid.Row="2" Text="4" FontSize="40"/>
+            <Button Clicked="N5" Grid.Column="1" Grid.Row="2" Text="5" FontSize="40"/>
+            <Button Clicked="N6" Grid.Column="2" Grid.Row="2" Text="6" FontSize="40"/>
+            <Button Clicked="minus" Grid.Column="3" Grid.Row="2" Text="-" FontSize="40"/>
+            <!--#endregion-->
+
+            <!--#region Row 3 -->
+            <Button Clicked="N1" Grid.Column="0" Grid.Row="3" Text="1" FontSize="40"/>
+            <Button Clicked="N2" Grid.Column="1" Grid.Row="3" Text="2" FontSize="40"/>
+            <Button Clicked="N3" Grid.Column="2" Grid.Row="3" Text="3" FontSize="40"/>
+            <Button Clicked="plus" Grid.Column="3" Grid.Row="3" Text="+" FontSize="40"/>
+            <!--#endregion-->
+
+            <!--#region Row 3 -->
+            <Button Grid.Column="0" Grid.Row="4" Text="" FontSize="40"/>
+            <Button Clicked="N0" Grid.Column="1" Grid.Row="4" Text="0" FontSize="40"/>
+            <Button Grid.Column="2" Grid.Row="4" Text="" FontSize="40"/>
+            <Button Clicked="equal" Grid.Column="3" Grid.Row="4" Text="=" FontSize="40"/>
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+
+</ContentPage>
